@@ -1,3 +1,31 @@
 puts "Welcome to the Roulette App, what is your name?"
 name = gets.chomp
+
 puts "Hello there, #{name}!"
+
+puts "How many credit would you like to begin with?"
+amount = gets.chomp.to_i
+credit = amount
+
+case 
+    when credit < 5 
+        puts "5 credits is the minimum"
+    when credit % 5 != 0 
+        puts "Please enter a credit that is a multiple of 5 (ie. 20 or 50)"
+    else
+        puts "You have entered #{credit} credits"
+    end
+
+    puts "Please choose a number from 0-36"
+    selected_num = gets.chomp.to_i
+
+    if selected_num < 0 || selected_num > 36 
+        puts "Please select a number between 0 and 36"
+    else
+        puts "You have selected #{selected_num}"
+    end
+
+    puts "Please spin the wheel to see which number gets generated"
+    
+
+    
