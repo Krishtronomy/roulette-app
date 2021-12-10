@@ -3,7 +3,7 @@ name = gets.chomp
 
 puts "Hello there, #{name}!"
 
-puts "How many credit would you like to begin with?"
+puts "How many credits would you like to begin with? (minimum of 5 and must be a multiple of 5)"
 amount = gets.chomp.to_i
 credit = amount
 
@@ -26,6 +26,12 @@ case
     end
 
     puts "Please spin the wheel to see which number gets generated"
-    
+    spin = rand(36).to_i
+    puts "#{spin} was generated"
 
-    
+    if spin == selected_num
+        puts "Congratulations, you now have #{credit + 5} credits!"
+        credit += 5
+    elsif spin != selected_num
+        puts "Unlucky this time! Would you like to spin again?"
+    end
