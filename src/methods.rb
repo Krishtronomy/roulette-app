@@ -1,13 +1,14 @@
 
 
-def credits(amount)
 
-credit = amount
+def credits(credit)
+
+# credit = amount
     case 
         when credit < 5 
             puts "5 credits is the minimum"
         when credit % 5 != 0 
-            puts "Please enter a credit that is a multiple of 5 (ie. 20 or 50)"
+            puts "Please enter a credit that is a multiple of 5 (ie. 5,10,15 etc..)"
         else
             puts "You have entered #{credit} credits"
     end
@@ -21,4 +22,38 @@ def num_picker(selected_num)
     else
         puts "You have selected #{selected_num}"
     end
+end
+
+
+
+# def random_num(selected_num)
+#     puts "Please type 'spin' to spin the wheel to see which number gets generated or 'exit' to exit"
+#     input = gets.chomp.to_s
+
+#     if input == 'spin'
+#         rand(36).to_i
+#         rand_num = rand(36).to_i
+#         puts "#{rand_num} was generated"   
+    
+#     elsif input == 'exit'
+#         puts "Thanks for playing, goodbye.."
+
+#     else "Not a valid input, please either enter spin or exit"
+#     end
+
+   
+# end
+
+
+# def credit_adder(credit)
+
+#     while rand_nums == selected_num
+#         credit += 5
+#     puts credit
+# end
+
+def credit_output(credit)
+    puts "-------------------------------"
+    puts "You now have #{credit} credits"
+    puts "-------------------------------"
 end
