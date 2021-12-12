@@ -9,6 +9,7 @@ def credits(credit)
             puts "5 credits is the minimum"
         when credit % 5 != 0 
             puts "Please enter a credit that is a multiple of 5 (ie. 5,10,15 etc..)"
+            credit = 0
         else
             puts "You have entered #{credit} credits"
     end
@@ -54,6 +55,10 @@ end
 
 def credit_output(credit)
     puts "-------------------------------"
-    puts "You now have #{credit} credits"
+    puts "You have #{credit} credits"
+    puts "-------------------------------"
+end
+
+def fancy_line
     puts "-------------------------------"
 end
