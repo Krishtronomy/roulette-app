@@ -62,3 +62,20 @@ end
 def fancy_line
     puts "-------------------------------"
 end
+
+
+# def random_range(range)
+#     if 
+#         input == 'multi' &&  selected_num 0..12
+#         credit += 5
+#     elsif 
+#         input == 'multi' &&  selected_num 13..24
+#         credit += 5
+#     elsif
+#         input == 'multi' &&  selected_num 25..36
+#         credit += 5
+#     else 
+#         credit = (credit.to_i) - 5
+#     end
+
+# end

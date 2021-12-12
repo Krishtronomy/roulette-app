@@ -26,7 +26,13 @@ loop do
     end
 
 
-#Run number picker method
+
+# Asks the user whether they want to spin or exit. If spin, programs runs through a conditional flow
+puts "Please type 'spin' to guess a specific number, 'range' to select a number within a range (0-12, 13-25 or 25-36)"
+input = gets.chomp.to_s
+fancy_line
+
+
 puts "Please choose a number from 0-36"
 selected_num = gets.chomp.to_i
 fancy_line
@@ -35,14 +41,7 @@ fancy_line
 
 num_picker(selected_num)
 
-
-
-# Asks the user whether they want to spin or exit. If spin, programs runs through a conditional flow
-puts "Please type 'spin' to spin the wheel to see which number gets generated or 'exit' to exit"
-input = gets.chomp.to_s
-fancy_line
-
-if input == 'spin'
+if input == 'spin' || input == 'range'
     rand(36).to_i
     rand_num = rand(36).to_i
     puts "#{rand_num} was generated"   
@@ -55,13 +54,30 @@ else
 end
 
 
-if rand_num == selected_num
+
+if input == 'spin' && rand_num == selected_num
     credit += 5
     credit_output(credit)
-elsif rand_num != selected_num
+elsif input == 'spin' && rand_num != selected_num
     credit = (credit.to_i) - 5
     credit_output(credit)
+elsif 
+        input == 'range' && rand_num.between?(0,12) == true && selected_num.between?(0,12)
+        credit += 5
+        credit_output(credit)
+    elsif 
+        input == 'range' &&  rand_num.between?(13,24) == true && selected_num.between?(13,24)
+        credit += 5
+        credit_output(credit)
+    elsif
+        input == 'range' &&  rand_num.between?(25,36) == true && selected_num.between?(25,36)
+        credit += 5
+        credit_output(credit)
+    else 
+        credit = (credit.to_i) - 5
+        credit_output(credit)
+
 end
 
-
 end
+
