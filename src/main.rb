@@ -44,38 +44,47 @@ num_picker(selected_num)
 if input == 'spin' || input == 'range'
     rand(36).to_i
     rand_num = rand(36).to_i
-    puts "#{rand_num} was generated"   
+    puts "#{rand_num} was generated"
 elsif input == 'exit'
     puts "Thanks for playing, goodbye.."
     credit_output(credit)
     break
 else 
-    puts "Not a valid input, please either enter spin or exit"
+    puts "Not a valid input, please either enter spin, range or exit"
 end
 
 
 
 if input == 'spin' && rand_num == selected_num
-    credit += 5
+    credit += 20
+    congrats
     credit_output(credit)
 elsif input == 'spin' && rand_num != selected_num
     credit = (credit.to_i) - 5
+    unlucky
     credit_output(credit)
 elsif 
         input == 'range' && rand_num.between?(0,12) == true && selected_num.between?(0,12)
         credit += 5
+        congrats
         credit_output(credit)
     elsif 
         input == 'range' &&  rand_num.between?(13,24) == true && selected_num.between?(13,24)
         credit += 5
+        congrats
         credit_output(credit)
     elsif
         input == 'range' &&  rand_num.between?(25,36) == true && selected_num.between?(25,36)
         credit += 5
+        congrats
         credit_output(credit)
-    else 
+    elsif
+        input == 'range' && rand_num != selected_num && rand_num.between?(0,36) == true && selected_num.between?(0,36)
         credit = (credit.to_i) - 5
+        unlucky
         credit_output(credit)
+    else
+        "Not a valid input, please try again"
 
 end
 

@@ -27,55 +27,35 @@ end
 
 
 
-# def random_num(selected_num)
-#     puts "Please type 'spin' to spin the wheel to see which number gets generated or 'exit' to exit"
-#     input = gets.chomp.to_s
-
-#     if input == 'spin'
-#         rand(36).to_i
-#         rand_num = rand(36).to_i
-#         puts "#{rand_num} was generated"   
-    
-#     elsif input == 'exit'
-#         puts "Thanks for playing, goodbye.."
-
-#     else "Not a valid input, please either enter spin or exit"
-#     end
-
-   
-# end
-
-
-# def credit_adder(credit)
-
-#     while rand_nums == selected_num
-#         credit += 5
-#     puts credit
-# end
-
 def credit_output(credit)
     puts "-------------------------------"
     puts "You have #{credit} credits"
     puts "-------------------------------"
 end
 
+
+
 def fancy_line
     puts "-------------------------------"
 end
 
 
-# def random_range(range)
-#     if 
-#         input == 'multi' &&  selected_num 0..12
-#         credit += 5
-#     elsif 
-#         input == 'multi' &&  selected_num 13..24
-#         credit += 5
-#     elsif
-#         input == 'multi' &&  selected_num 25..36
-#         credit += 5
-#     else 
-#         credit = (credit.to_i) - 5
-#     end
 
-# end
+def congrats
+    puts "Congrats you won!"
+end
+
+
+
+
+def unlucky
+    puts "Unlucky this time, try again..."
+end
+
+
+def exit_program
+    if input == 'exit'
+        puts "Thanks for playing, goodbye.."
+        exit
+    end
+end
