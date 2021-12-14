@@ -59,3 +59,10 @@ def exit_program
         exit
     end
 end
+
+
+def number_list
+    rand_num.each do |num|
+    puts num 
+    end
+end

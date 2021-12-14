@@ -1,16 +1,20 @@
 require_relative './methods.rb'
+require('colorize')
+require('tty-prompt')
+require('roulette-wheel-selection')
 
+prompt = TTY::Prompt.new
 
 
 #Asks user to input their name, and stores into name variable
-puts "Welcome to the Roulette App, what is your name?"
+puts "Welcome to the Roulette App, what is your name?".yellow
 name = gets.chomp
 
 
-puts "Hello there, #{name}!"
+puts "Hello there, #{name}!".blue
 #Asks user how many credits they would like to play with
-puts "How many credits would you like to begin with? (minimum of 5 and must be a multiple of 5)"
-credit = gets.chomp.to_i
+credit = prompt.select("How many credits would you like to begin with?", %w(20 50 100)).to_i
+# credit = gets.chomp.to_i
 
 #Run credits method
 credits(credit)
@@ -43,7 +47,7 @@ num_picker(selected_num)
 
 if input == 'spin' || input == 'range'
     rand(36).to_i
-    rand_num = rand(36).to_i
+    rand_num = rand(36).to_i 
     puts "#{rand_num} was generated"
 elsif input == 'exit'
     puts "Thanks for playing, goodbye.."
@@ -52,7 +56,6 @@ elsif input == 'exit'
 else 
     puts "Not a valid input, please either enter spin, range or exit"
 end
-
 
 
 if input == 'spin' && rand_num == selected_num
