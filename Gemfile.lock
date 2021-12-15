@@ -1,10 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    artii (2.1.2)
     colorize (0.8.1)
+    figlet (1.1.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
-    roulette-wheel-selection (1.1.1)
     tty-color (0.6.0)
     tty-cursor (0.7.1)
     tty-prompt (0.23.1)
@@ -21,7 +22,9 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
+  artii (~> 2.1)
   colorize (~> 0.8.1)
+  figlet (~> 1.1)
   tty-prompt (~> 0.23.1)
 
 BUNDLED WITH

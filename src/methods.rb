@@ -32,7 +32,7 @@ end
 
 def credit_output(credit)
     puts "-------------------------------"
-    puts "You have #{credit} credits"
+    puts "You have #{credit} credits".green
     puts "-------------------------------"
 end
 
@@ -63,6 +63,5 @@ def validate_name(name)
    raise InvalidNameError, "Name must not be empty, please enter a valid name" if name.empty?
    name
 end
-
 
 
