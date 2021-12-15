@@ -49,13 +49,12 @@ if input == 'exit'
 end
 
 begin
-puts "Please choose a number from 0-36"
-selected_num = gets.chomp.to_i
+puts "Please select a number between 0 and 36"
+selected_num = Integer(gets.chomp)
 fancy_line
-# num_picker(selected_num)
-valdate_number(selected_num)
-rescue InvalidNumberError => e
-    puts "An error occurred: #{e.inspect}"
+num_validator(selected_num)
+rescue ArgumentError
+    puts "Your input is not a number thats between 0 and 36, please try again...".red
     retry
 end
 
