@@ -1,6 +1,5 @@
 
 
-
 def credits(credit)
 
 # credit = amount
@@ -19,9 +18,13 @@ end
 
 def num_picker(selected_num)
     if selected_num < 0 || selected_num > 36 
-        puts "Please select a number between 0 and 36"
+        puts "Please select a number between 0 and 36".red
+    
+    elsif selected_num.between?(0,36)
+            puts "Sorry that is not a number, please try again".red
+
     else
-        puts "You have selected #{selected_num}"
+        puts "You have selected #{selected_num}".blue
     end
 end
 
@@ -42,27 +45,41 @@ end
 
 
 def congrats
-    puts "Congrats you won!"
+    puts "Congrats you won!".blue
 end
 
 
 
 
 def unlucky
-    puts "Unlucky this time, try again..."
+    puts "Unlucky this time, try again...".red
 end
 
 
-def exit_program
-    if input == 'exit'
-        puts "Thanks for playing, goodbye.."
-        exit
+
+
+def num_validator
+    if selected_num > 36 || selected_num < 0
+        puts "Please enter a valid number"
     end
 end
 
-
-def number_list
-    rand_num.each do |num|
-    puts num 
-    end
+class InvalidNameError < StandardError
 end
+
+def validate_name(name)
+    name = name.strip #Trim whitespace
+   raise InvalidNameError, "Name must not be empty, please enter a valid name" if name.empty?
+   name
+end
+
+class InvalidNumberError < StandardError
+end
+
+def valdate_number(selected_num)
+    selected_num = selected_num
+    raise InvalidNumberError, "You must enter a valid number between 0-36" if selected_num.between?(0,36) == false 
+    raise InvalidNumberError, "You must enter a number" if Integer(selected_num)
+
+end
+        
