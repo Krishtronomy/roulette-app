@@ -1,5 +1,18 @@
-require('artii')
+puts "Hey please enter ten numbers"
+numbers = []
 
-asc= Artii::Base.new
 
-puts asc.asciify('Art!')
+numbers << gets.chomp.to_i
+
+
+
+numbers << gets.chomp.to_i
+
+
+numbers << gets.chomp.to_i
+
+
+
+numbers << gets.chomp.to_i
+
+print numbers

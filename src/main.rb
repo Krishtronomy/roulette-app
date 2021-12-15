@@ -7,6 +7,8 @@ require('artii')
 prompt = TTY::Prompt.new
 a = Artii::Base.new
 
+num_list = []
+
 #Asks user to input their name, and stores into name variable
 puts a.asciify("Welcome")
 puts a.asciify("to")
@@ -65,11 +67,13 @@ end
 if input == 'Spin' || input == 'Range'
     rand(36).to_i
     rand_num = rand(36).to_i 
+    num_list << rand_num
     puts "#{rand_num} was generated".colorize(:light_blue)
 else 
     puts "Not a valid input, please either enter Spin, Range or Exit"
 end
 
+puts "The previous numbers have been #{num_list}".light_green
 
 if input == 'Spin' && rand_num == selected_num
     credit += 20
