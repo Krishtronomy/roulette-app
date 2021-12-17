@@ -8,8 +8,9 @@ This is a simple Terminal app developed in Ruby, that allows the user to play a 
 
 - [Installation](#installation)
 - [Software Development Plan](#software-development-plan)
+- [Features](#features)
 - [System Requirements](#system-requirements)
-  
+
 
 
 *  The app allows a user to start off game with a credit of their choice
@@ -29,6 +30,20 @@ The game is designed as a means of entertainment and to cure boredom. Although t
 For the above reasons, my main target audience is aimed at people who have addictions around gambling, but it is also just a fun little game that can be used by anyone to cure boredom.
 
 Upon designing the application, I have attempted to make the game as user and beginner friendly as possible; realising the fact that my target audience may not be tech savvy. In my Github repository, I have tried to lay out the instructions as clearly as possible so as to help the user understand and operate the game with ease.
+
+
+## [Features](#features)
+### 1.  Random Number Generator:
+The random number generator is a feature that randomises and outputs any number between 0 and 36. This feature is created using the `rand` method which randomises the number each time a selection is made by the user.
+
+### 2. Number Range Validator
+The number range validator validates whether if the user entered number matches with the randomised number. The validator determines whether the user selects `spin` and it will see if both numbers match exactly, or if the user selects `range` then it will check if the the user entered number is within the range of the randomised number (ie. random generated number is `7` which puts this in the range of `0 - 12`, and user had selected number `2`, the result will then return the validation as true as it is within range) This is achieved using if/else control flow to validate the correct result.
+
+### 3. Number History Viewer
+The number history viewer is a feature that pushes all the elements from the number randomiser into a new array and stores them. This number history viewer is then outputted to the screen, allowing the user to visibily see the list of numbers that has been struck allowing them to perhaps notice a trend and help decide on what number to pick next.
+
+### 4. Login Feature
+A feature that saves the users information into a JSON file with their name and remaining credit. This allows the user to have this information saved, so if they do end up winning alot of credit, they can have this stored and pcik up from where they left off.
 
 ## [Installation](#installation)
 1. You will first need to `cd` into the `src` directory to be able to run the below installation shell script file.
