@@ -1,8 +1,6 @@
 
-
+# Conditional flow to catch if user enters incorrect number
 def credits(credit)
-
-# credit = amount
     case 
         when credit < 5 
             puts "5 credits is the minimum"
@@ -15,21 +13,19 @@ def credits(credit)
 end
 
 
-
+# Raise error when user enters incorrect selection for number
 def num_validator(selected_num)
     if selected_num < 0 || selected_num > 36 
         raise ArgumentError
-    
     elsif selected_num.between?(0,36) == false
         raise ArgumentError
-    
     else
         puts "You have selected #{selected_num}".colorize(:blue)
     end
 end
 
 
-
+#Output how much credit the user currenty has
 def credit_output(credit)
     puts "-------------------------------"
     puts "You have #{credit} credits".colorize(:green)
@@ -37,19 +33,19 @@ def credit_output(credit)
 end
 
 
-
+#Print a fancy line to display output to the terminal nicely
 def fancy_line
     puts "-------------------------------"
 end
 
 
-
+#Print a congrats message 
 def congrats
     puts "Congrats you won!".blue
 end
 
 
-
+#Print a unlucky message
 def unlucky
     puts "Unlucky this time, try again...".colorize(:red)
 end
@@ -64,4 +60,10 @@ def validate_name(name)
    name
 end
 
-
+# Progress bar for nice animation while number is generating.
+def progress_bar
+    0.step(100, 5) do |i|
+        printf("\rProgress: [%-20s]", "=" * (i/5))
+        sleep(0.08)
+      end
+end

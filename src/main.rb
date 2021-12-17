@@ -2,9 +2,12 @@ require_relative './methods.rb'
 require('colorize')
 require('tty-prompt')
 require('artii')
+require('ruby-progressbar')
 
 prompt = TTY::Prompt.new
 a = Artii::Base.new
+progressbar = ProgressBar.create
+
 
 num_list = []
 
@@ -67,6 +70,7 @@ if input == 'Spin' || input == 'Range'
     rand(36).to_i
     rand_num = rand(36).to_i 
     num_list << rand_num
+    progress_bar  
     puts "#{rand_num} was generated".colorize(:light_blue)
 else 
     puts "Not a valid input, please either enter Spin, Range or Exit"
