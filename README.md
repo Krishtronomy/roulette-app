@@ -11,3 +11,10 @@ This is a simple Terminal app developed in Ruby, that allows the user to play a 
 <li>  The game will cycle through once and finish if user runs out of credit or if the user exits
 <li>  User can exit and withdraw credit any time
 </ul>
+
+
+# To run executable file
+
+1. You may need to give the appropriate permissions to the run_app.sh file so can be run on your system. To do this, you can run the following on your Terminal:
+
+`chmod +x ./src/run_app.sh`
