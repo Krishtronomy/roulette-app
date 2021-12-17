@@ -1,7 +1,6 @@
 require_relative './methods.rb'
 require('colorize')
 require('tty-prompt')
-require('roulette-wheel-selection')
 require('artii')
 
 prompt = TTY::Prompt.new
@@ -17,7 +16,7 @@ begin
 puts "What is your name?".colorize(:blue)
 name = gets.chomp
 validate_name(name)
-puts "Hello there, #{name}!".yellow
+puts "Hello there, #{name}!".colorize(:yellow)
 rescue InvalidNameError 
     puts "Please enter a valid name"
     retry
@@ -60,7 +59,7 @@ selected_num = Integer(gets.chomp)
 fancy_line
 num_validator(selected_num)
 rescue ArgumentError
-    puts "Your input is not a number thats between 0 and 36, please try again...".red
+    puts "Your input is not a number thats between 0 and 36, please try again...".colorize(:red)
     retry
 end
 
@@ -73,7 +72,7 @@ else
     puts "Not a valid input, please either enter Spin, Range or Exit"
 end
 
-puts "The previous numbers have been #{num_list}".light_green
+puts "The previous numbers have been: #{num_list}".colorize(:light_green)
 
 if input == 'Spin' && rand_num == selected_num
     credit += 20

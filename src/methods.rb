@@ -24,7 +24,7 @@ def num_validator(selected_num)
         raise ArgumentError
     
     else
-        puts "You have selected #{selected_num}".blue
+        puts "You have selected #{selected_num}".colorize(:blue)
     end
 end
 
@@ -32,7 +32,7 @@ end
 
 def credit_output(credit)
     puts "-------------------------------"
-    puts "You have #{credit} credits".green
+    puts "You have #{credit} credits".colorize(:green)
     puts "-------------------------------"
 end
 
@@ -51,7 +51,7 @@ end
 
 
 def unlucky
-    puts "Unlucky this time, try again...".red
+    puts "Unlucky this time, try again...".colorize(:red)
 end
 
 
