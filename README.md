@@ -6,11 +6,12 @@ This is a simple Terminal app developed in Ruby, that allows the user to play a 
 
 ## [Roulette App - Repository](https://github.com/Krishtronomy/roulette-app)
 
-- [Installation](#installation)
+
 - [Software Development Plan](#software-development-plan)
 - [Features](#features)
+- [Outline](#outline)
+- [Help Documentation](#help-documentation)
 - [System Requirements](#system-requirements)
-
 
 
 *  The app allows a user to start off game with a credit of their choice
@@ -45,7 +46,18 @@ The number history viewer is a feature that pushes all the elements from the num
 ### 4. Login Feature
 A feature that saves the users information into a JSON file with their name and remaining credit. This allows the user to have this information saved, so if they do end up winning alot of credit, they can have this stored and pcik up from where they left off.
 
-## [Installation](#installation)
+## [Outline](#outline)
+- The user will find out how to interact with each feature by going through the documentation of the app. I will also implement Command line arguments with help flags that will very clearly outline the instructions on how to use each feature. The design of the app is meant to be very user friendly so it will require minimum effort to know how to navigate the app.
+
+- The user will mostly interact with menu options and their keyboard to type input where required. The menu options will be added using a Ruby Gem called `tty-prompt ` which will help me implement an easy to navigate menu within the terminal.
+
+- Errors will be captured through control flow using `if/else` and `case statements` to help prevent the app from crashing from any incorrect input by the user. Alongside this, the app will utilise `raise` to raise errors in the event of unexpected input and then use `begin`, `rescue` and `retry` to allow the user to loop back retry the input again without crashing the app. I will use inheritance to create custom error type 
+messages and then print this to the user indicating the error in a graceful manner.
+
+
+## [Help Documentation](#help-documentation)
+
+### Installation
 1. You will first need to `cd` into the `src` directory to be able to run the below installation shell script file.
 2. You may need to give the appropriate permissions to the `install_dependencies` file so it can be run on your system. To do this, you can run the following in your Terminal:
 
@@ -56,7 +68,7 @@ A feature that saves the users information into a JSON file with their name and 
 `./install_dependencies.sh`
 
     
-## Executable file
+### Executable file
 
 You will firstly need to `cd` into the `src` directory. 
 You can run the app using the `ruby main.rb` command, or alternatively you can use `run_app.sh` bash shell script file:
