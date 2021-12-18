@@ -40,12 +40,16 @@ end
 
 
 #Print a congrats message 
+
 def congrats
-    puts "Congrats you won!".blue
+    puts "Congrats you won!".colorize(:blue)
 end
 
 
+
 #Print a unlucky message
+
+
 def unlucky
     puts "Unlucky this time, try again...".colorize(:red)
 end
@@ -82,17 +86,17 @@ end
 def total_spent(loss, wins, credit_select)
 
     total = (loss.count + wins.count) * 5
-    puts "You spent a total of #{credit_select} credits and used a grand total of #{total} credits."
+    puts "You spent a total of #{credit_select} credits and used a grand total of #{total} credits.".colorize(:magenta)
     
     case 
     when total <= 20
-        puts "That is about how much a Movie Tickets costs.".colorize(:yellow)
+        puts "That is about how much a Movie Tickets costs...".colorize(:yellow)
     when total <= 50 
-        puts "That is about how much a nice dinner costs.".colorize(:yellow)
+        puts "That is about how much a nice dinner costs...".colorize(:yellow)
     when total <= 100
-        puts "That is around the same as a Domestic Flight.".colorize(:yellow)
+        puts "That is around the same as a Domestic Flight...".colorize(:yellow)
     when total > 100
-        puts "That could've been put towards a PS5."
+        puts "That could've been put towards a PS5...".colorize(:red)
     end
 end
 
