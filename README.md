@@ -19,6 +19,7 @@ This is a simple Terminal app developed in Ruby, that allows the user to play a 
 - [Features](#features)
 - [Outline](#outline)
 - [Control Flow Diagram](#control-flow-diagram)
+- [Implementation Plan](#implementation-plan)
 - [Help Documentation](#help-documentation)
 - [System Requirements](#system-requirements)
 
@@ -65,7 +66,16 @@ Below is the Control flow digram for the application:
 
 ![flow chart](./docs/flow_chart.png)
 
+## [Implementation Plan](#implementation-plan)
+The Implementation plan is tracked through Trello which you can find the link for below. I have utilised the Kanban style board to keep a track of my Feature items, to-do items, doing-items, testing-items and moving the appropriate cards to `done` when finalised. I have used labels to mark priority levels and due dates to effectively track this.
 
+Link to Trello Board:
+https://trello.com/b/m0EuEkAc/roulette-app
+### Trello board:
+![trello board](./docs/trello.png)
+
+### Example of a Feature Card
+![trello board](./docs/trello2.png)
 ## [Help Documentation](#help-documentation)
 
 ### Installation
