@@ -51,9 +51,10 @@ def unlucky
 end
 
 
+#Inherits from standard error class to create custom error
 class InvalidNameError < StandardError
 end
-
+# Raises error if user enters empty string for name
 def validate_name(name)
     name = name.strip #Trim whitespace
    raise InvalidNameError, "Name must not be empty, please enter a valid name" if name.empty?
@@ -61,9 +62,72 @@ def validate_name(name)
 end
 
 # Progress bar for nice animation while number is generating.
+# def progress_bar
+#     0.step(100, 5) do |i|
+#         printf("\rProgress: [%-20s]", "=" * (i/5))
+#         sleep(0.08)
+#       end
+# end
+
+
 def progress_bar
-    0.step(100, 5) do |i|
-        printf("\rProgress: [%-20s]", "=" * (i/5))
-        sleep(0.08)
-      end
+bar = TTY::ProgressBar.new("Generating [:bar]", total: 30)
+30.times do
+    sleep(0.03)
+    bar.advance  # by default increases by 1
+  end
+end
+
+
+def greeting 
+font = TTY::Font.new(:doom)
+pastel = Pastel.new
+puts pastel.yellow(font.write("Welcome to Roulette"))
+end
+
+
+
+# def total_spent(num_list,total)
+#     total.push(num_list)
+#     while num_list.length > 1
+#         for num in total do
+#             num = 5
+#             length = num_list.length
+#             total = num * length
+#             puts "Total spent is #{total}"
+#         end
+#     end
+# end
+
+def total_spent(loss, wins, credit_select)
+
+    total = (loss.count + wins.count) * 5
+    puts "You spent a total of #{credit_select} and used a grand total of #{total} credits."
+    
+    case 
+    when total <= 20
+        puts "That is about how much a Movie Tickets costs.".colorize(:yellow)
+    when total <= 50 
+        puts "That is about how much a nice dinner costs.".colorize(:yellow)
+    when total <= 100
+        puts "That is around the same as a Domestic Flight.".colorize(:yellow)
+    when total > 100
+        puts "That could've been put towards a PS5."
+    end
+end
+
+
+
+
+def win_count(wins)
+    if wins.count == 1 && wins[0] == 1
+       puts "You won a total of #{wins.count} time.".colorize(:blue)
+    else 
+        puts "You won a total of #{wins.count} times.".colorize(:green)
+    end
+end
+
+def loss_count(num_list, wins)
+    loss = num_list.count - wins.count
+    puts "You lost a total of #{loss} times.".colorize(:red)
 end
