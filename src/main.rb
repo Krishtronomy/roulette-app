@@ -1,4 +1,5 @@
 require_relative './methods.rb'
+require_relative './command_args.rb'
 require('colorize')
 require('tty-prompt')
 require('artii')
@@ -13,6 +14,7 @@ wins = []
 loss = []
 num_list = []
 total = []
+
 
 greeting
 begin
@@ -59,10 +61,10 @@ if input == 'Exit'
 end
 
 begin
-puts "Please select a number between 0 and 36"
-selected_num = Integer(gets.chomp)
-fancy_line
-num_validator(selected_num)
+    puts "Please select a number between 0 and 36"
+    selected_num = Integer(gets.chomp)
+    fancy_line
+    num_validator(selected_num)
 rescue ArgumentError
     puts "Your input is not a number thats between 0 and 36, please try again...".colorize(:red)
     retry
