@@ -15,13 +15,13 @@ loss = []
 num_list = []
 total = []
 
-
+#print greeting and ask for users name
 greeting
 begin
-puts "What is your name?".colorize(:blue)
-name = gets.chomp
-validate_name(name)
-puts "Hello there, #{name}!".colorize(:yellow)
+    puts "What is your name?".colorize(:blue)
+    name = gets.chomp
+    validate_name(name)
+    puts "Hello there, #{name}!".colorize(:yellow)
 rescue InvalidNameError 
     puts "Please enter a valid name"
     retry
@@ -53,13 +53,12 @@ guess = prompt.select("Please select whether you would like to Spin to guess a s
 input = guess.to_s
 fancy_line
 
-
+#exit program if user selects Exit
 if input == 'Exit'
     puts "Thanks for playing, goodbye.."
     credit_output(credit)
     exit
 end
-
 begin
     puts "Please select a number between 0 and 36"
     selected_num = Integer(gets.chomp)
@@ -69,31 +68,30 @@ rescue ArgumentError
     puts "Your input is not a number thats between 0 and 36, please try again...".colorize(:red)
     retry
 end
-
+#random number generator
 if input == 'Spin' || input == 'Range'
     rand(36).to_i
     rand_num = rand(36).to_i 
     num_list << rand_num
     progress_bar  
-    
     puts "#{rand_num} was generated".colorize(:light_blue)
 else 
     puts "Not a valid input, please either enter Spin, Range or Exit"
 end
-
+#prints out a list of the previous numbers
 puts "The previous numbers have been: #{num_list}".colorize(:light_green)
 
-if input == 'Spin' && rand_num == selected_num
-    credit += 20
-    congrats
-    wins << 1
-    credit_output(credit)
-elsif input == 'Spin' && rand_num != selected_num
-    credit = (credit.to_i) - 5
-    unlucky
-    loss << 1
-    credit_output(credit)
-elsif 
+    if input == 'Spin' && rand_num == selected_num
+        credit += 20
+        congrats
+        wins << 1
+        credit_output(credit)
+    elsif input == 'Spin' && rand_num != selected_num
+        credit = (credit.to_i) - 5
+        unlucky
+        loss << 1
+        credit_output(credit)
+    elsif 
         input == 'Range' && rand_num.between?(0,12) == true && selected_num.between?(0,12)
         credit += 5
         congrats
@@ -120,8 +118,6 @@ elsif
         credit_output(credit)
     else
         "Not a valid input, please try again"
-
-end
-
+    end
 end
 

@@ -40,7 +40,6 @@ end
 
 
 #Print a congrats message 
-
 def congrats
     puts "Congrats you won!".colorize(:blue)
 end
@@ -48,8 +47,6 @@ end
 
 
 #Print a unlucky message
-
-
 def unlucky
     puts "Unlucky this time, try again...".colorize(:red)
 end
