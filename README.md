@@ -79,12 +79,18 @@ https://trello.com/b/m0EuEkAc/roulette-app
 ## [Help Documentation](#help-documentation)
 
 ### Installation
-1. You will first need to `cd` into the `src` directory to be able to run the below installation shell script file.
-2. You may need to give the appropriate permissions to the `install_dependencies` file so it can be run on your system. To do this, you can run the following in your Terminal:
+1. You will need to clone this repo on to your local machine before you can run the application. You can run the following command within your Terminal application:
+
+`git clone https://github.com/Krishtronomy/roulette-app.git`
+ 
+ 2. Once cloned, you will then need to `cd` into the `src` directory to be able to run the below installation shell script file.
+3. You may need to give the appropriate permissions to the `install_dependencies` file so it can be run on your system. To do this, you can run the following in your Terminal:
+
+`cd src`
 
 `chmod +x ./install_dependencies.sh`
 
-3. Once you have given permission and are in the `src` directory, you can run the below script to install the required dependencies:
+4. Once you have given permission and are in the `src` directory, you can run the below script to install the required dependencies:
 
 `./install_dependencies.sh`
 
