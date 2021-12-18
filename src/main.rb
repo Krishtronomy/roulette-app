@@ -14,10 +14,6 @@ loss = []
 num_list = []
 total = []
 
-#Asks user to input their name, and stores into name variable
-# puts a.asciify("Welcome")
-# puts a.asciify("to")
-# puts a.asciify("Roulette")
 greeting
 begin
 puts "What is your name?".colorize(:blue)
@@ -34,21 +30,6 @@ end
 credit_select = prompt.select("How many credits would you like to begin with?", %w(20 50 100)).to_i
 credit = credit_select.to_i
 
-# total = []
-# total.push(num_list)
-# puts total
-# while num_list.length > 0
-#     total.each do |num|
-#         num = 5
-       
-#         length = num_list.length
-#         total = num * length
-#         puts "Total spent is #{total}"
-#         if credit < 5 
-#             puts "Sorry you're out of credit, Goodbye...You have spent a total of #{total}"
-#         end
-#     end
-# end
 
 #Run credits method
 credits(credit)
@@ -74,7 +55,7 @@ fancy_line
 if input == 'Exit'
     puts "Thanks for playing, goodbye.."
     credit_output(credit)
-    Exit
+    exit
 end
 
 begin

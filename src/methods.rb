@@ -61,14 +61,6 @@ def validate_name(name)
    name
 end
 
-# Progress bar for nice animation while number is generating.
-# def progress_bar
-#     0.step(100, 5) do |i|
-#         printf("\rProgress: [%-20s]", "=" * (i/5))
-#         sleep(0.08)
-#       end
-# end
-
 
 def progress_bar
 bar = TTY::ProgressBar.new("Generating [:bar]", total: 30)
@@ -87,22 +79,10 @@ end
 
 
 
-# def total_spent(num_list,total)
-#     total.push(num_list)
-#     while num_list.length > 1
-#         for num in total do
-#             num = 5
-#             length = num_list.length
-#             total = num * length
-#             puts "Total spent is #{total}"
-#         end
-#     end
-# end
-
 def total_spent(loss, wins, credit_select)
 
     total = (loss.count + wins.count) * 5
-    puts "You spent a total of #{credit_select} and used a grand total of #{total} credits."
+    puts "You spent a total of #{credit_select} credits and used a grand total of #{total} credits."
     
     case 
     when total <= 20
