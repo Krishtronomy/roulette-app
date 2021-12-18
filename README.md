@@ -1,6 +1,14 @@
 # Welcome to my Roulette App
 
-This is a simple Terminal app developed in Ruby, that allows the user to play a Roulette styled game. It is intended for users who want to practise their skills before heading into a Casino to play with real money. Or simply acts as a game to play for entertainment to cure boredom.
+This is a simple Terminal app developed in Ruby, that allows the user to play a Roulette styled game.
+
+### Key points:
+*  The app allows a user to start off the game with a credit of their choice.
+* It asks the user to input any number from 0-36.
+* If the user guesses the number correctly, they earn 20 additional credits.
+* If they guess incorrectly, their credit decreases by 5.
+* The game will cycle through once and finish if user runs out of credit or if the user exits the game.
+* User can exit the game from the menu selection at any time.
 
 ## You can visit the Repository here:
 
@@ -10,16 +18,11 @@ This is a simple Terminal app developed in Ruby, that allows the user to play a 
 - [Software Development Plan](#software-development-plan)
 - [Features](#features)
 - [Outline](#outline)
+- [Control Flow Diagram](#control-flow-diagram)
 - [Help Documentation](#help-documentation)
 - [System Requirements](#system-requirements)
 
 
-*  The app allows a user to start off game with a credit of their choice
-*   Ask user to input any number from 0-36
-* If user guesses the number correctly, multiply their staked credit by 36
-* If they guess incorrectly, decrease credit by 5
-* The game will cycle through once and finish if user runs out of credit or if the user exits
-* User can exit and withdraw credit any time
 
 
 ## [Software Development Plan](#software-development-plan)
@@ -43,8 +46,9 @@ The number range validator validates whether if the user entered number matches 
 ### 3. Number History Viewer
 The number history viewer is a feature that pushes all the elements from the number randomiser into a new array and stores them. This number history viewer is then outputted to the screen, allowing the user to visibily see the list of numbers that has been struck allowing them to perhaps notice a trend and help decide on what number to pick next.
 
-### 4. Login Feature
-A feature that saves the users information into a JSON file with their name and remaining credit. This allows the user to have this information saved, so if they do end up winning alot of credit, they can have this stored and pcik up from where they left off.
+### 4. Total Spent
+The total spent feature is method which calculates the amount of turn the players has staked a credit. It calculates this by utilising the `win` and `loss` arrays which gets populated each turn. The method then takes the count of both arrays and multiplies this by 5(total stake per turn) and returns the value. Depending on the total amount lost, the user will get printed a message suggesting how the credit could've been used otherwise.
+
 
 ## [Outline](#outline)
 - The user will find out how to interact with each feature by going through the documentation of the app. I will also implement Command line arguments with help flags that will very clearly outline the instructions on how to use each feature. The design of the app is meant to be very user friendly so it will require minimum effort to know how to navigate the app.
@@ -53,6 +57,13 @@ A feature that saves the users information into a JSON file with their name and 
 
 - Errors will be captured through control flow using `if/else` and `case statements` to help prevent the app from crashing from any incorrect input by the user. Alongside this, the app will utilise `raise` to raise errors in the event of unexpected input and then use `begin`, `rescue` and `retry` to allow the user to loop back retry the input again without crashing the app. I will use inheritance to create custom error type 
 messages and then print this to the user indicating the error in a graceful manner.
+
+
+## [Control Flow Diagram](#control-flow-diagram)
+
+Below is the Control flow digram for the application:
+
+![flow chart](./docs/flow_chart.png)
 
 
 ## [Help Documentation](#help-documentation)
